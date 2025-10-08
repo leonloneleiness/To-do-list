@@ -1,0 +1,111 @@
+*{
+    margin: 0; /*loại bỏ khoảng trắng*/
+    padding: 0; /*loại bỏ khoảng trắng*/
+    box-sizing: border-box; /*tính toán kích thước*/
+    font-family: 'Poppins', sans-serif; /*font chữ*/
+}
+
+.container{
+    width: 100%; /*chiều rộng*/
+    min-height: 100vh; /*chiều cao*/
+    background: linear-gradient(135deg, #71b7e6, #9b59b6); /*nền*/
+    padding: 10px; /*khoảng cách*/
+}
+
+.todo-app{
+    width: 100%; /*chiều rộng*/
+    max-width: 540px; /*chiều rộng tối đa*/
+    background: #fff; /*nền*/
+    margin: 100px auto 20px; /*căn giữa*/
+    padding: 40px 30px 70px; /*khoảng cách*/
+    border-radius: 10px; /*bo góc*/
+}
+
+.todo-app h2{
+    color: #002765; /*màu chữ*/
+    display: flex; /*hiển thị dạng flex*/
+    align-items: center; /*căn giữa theo chiều dọc*/
+    margin-bottom: 20px; /*khoảng cách bên dưới*/
+}
+
+.todo-app h2 img{
+    width: 30px; /*chiều rộng*/
+    margin-left: 10px; /*khoảng cách bên trái*/
+}
+
+.row{
+    display: flex; /*hiển thị dạng flex*/
+    align-items: center; /*căn giữa theo chiều dọc*/
+    justify-content: space-between; /*căn đều theo chiều ngang*/
+    background: #edeef0; /*nền*/
+    border-radius: 30px; /*bo góc*/
+    padding-left: 20px; /*khoảng cách bên trái*/
+    margin-bottom: 25px; /*khoảng cách bên dưới*/
+}
+
+input{
+    flex: 1; /*chiếm toàn bộ không gian còn lại*/
+    border: none; /*không viền*/
+    outline: none; /*không viền*/
+    background: transparent; /*nền trong suốt*/
+    padding: 10px; /*khoảng cách*/
+}
+
+button{
+    border: none; /*không viền*/
+    outline: none; /*không viền*/
+    padding: 16px 50px; /*khoảng cách*/
+    background: rgb(117, 117, 223); /*nền*/
+    color: #fff; /*màu chữ*/
+    font-size: 16px; /*kích thước chữ*/
+    cursor: pointer; /*con trỏ chuột*/
+    border-radius: 40px; /*bo góc*/
+}
+
+ul li{
+    list-style: none; /*không có dấu chấm*/
+    font-size: 17px; /*kích thước chữ*/
+    padding: 12px 8px 12px 50px; /*khoảng cách*/
+    user-select: none; /*không thể chọn*/
+    cursor: pointer; /*con trỏ chuột*/
+    position: relative; /*vị trí tương đối*/
+}
+
+ul li::before{
+    content: ''; /*nội dung rỗng*/
+    position: absolute; /*vị trí tuyệt đối*/
+    height: 28px; /*chiều cao*/
+    width: 28px; /*chiều rộng*/
+    border-radius: 50%; /*bo tròn*/
+    background-image: url(unchecked.png);
+    background-size: cover;
+    background-position: center; /*căn giữa*/
+    top: 12px; /*cách trên*/
+    left: 8px; /*cách trái*/
+}
+
+ul li.checked{
+    color: #555; /*màu chữ*/
+    text-decoration: line-through; /*gạch ngang*/
+}
+
+ul li.checked::before{
+    background-image: url(checked.png);
+}
+
+ul li span{
+    position: absolute; /*vị trí tuyệt đối*/
+    right: 0%; /*cách phải*/
+    top: 5px; /*cách trên*/
+    width: 40px; /*chiều rộng*/
+    height: 40px; /*chiều cao*/
+    font-size: 22px; /*kích thước chữ*/
+    color: #555; /*màu chữ*/
+    line-height: 40px; /*chiều cao dòng*/
+    text-align: center; /*căn giữa*/
+    border-radius: 50%; /*bo tròn*/
+}
+
+ul li span:hover{
+    background: #edeef0; /*nền*/
+}
