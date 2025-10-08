@@ -1,0 +1,111 @@
+* {
+    margin: 0; /* tạo lại khoảng cách mặc định */
+    padding: 0; /* tạo lại khoảng cách mặc định */
+    box-sizing: border-box; /* bao gồm padding và border trong kích thước phần tử */
+    font-family: 'Poppins', sans-serif; /* font chữ */
+}
+
+.container {
+    width: 100%; /* chiều rộng 100% */
+    min-height: 100vh; /* chiều cao tối thiểu 100% chiều cao viewport */
+    background: linear-gradient(135deg, #71b7e6, #9b59b6); /* nền gradient */
+    padding: 10px;
+}
+
+.todo-app {
+    width: 100%; /* chiều rộng 100% */
+    max-width: 540px; /* chiều rộng tối đa 540px */
+    background: #fff; /* nền trắng */
+    margin: 100px auto 20px; /* căn giữa với margin trên 100px, dưới 20px */
+    padding: 40px 30px 70px; /* padding xung quanh */
+    border-radius: 10px; /* bo tròn góc */
+}
+
+.todo-app h2 {
+    color: #002765; /* màu chữ */
+    display: flex; /* sử dụng flexbox */
+    align-items: center; /* căn giữa theo chiều dọc */
+    margin-bottom: 20px; /* khoảng cách dưới */
+}
+
+.todo-app h2 img {
+    width: 30px; /* chiều rộng ảnh */
+    margin-left: 10px; /* khoảng cách bên trái */
+}
+
+.row {
+    display: flex; /* sử dụng flexbox */
+    align-items: center; /* căn giữa theo chiều dọc */
+    justify-content: space-between; /* khoảng cách đều giữa các phần tử */
+    background: #edeef0; /* nền xám nhạt */
+    border-radius: 30px; /* bo tròn góc */
+    padding-left: 20px; /* khoảng cách bên trái */
+    margin-bottom: 25px; /* khoảng cách dưới */
+}
+
+input {
+    flex: 1; /* chiếm toàn bộ không gian còn lại */
+    border: none; /* bỏ viền */
+    outline: none; /* bỏ viền khi focus */
+    background: transparent; /* nền trong suốt */
+    padding: 10px; /* padding xung quanh */
+}
+
+button {
+    border: none; /* bỏ viền */
+    outline: none; /* bỏ viền khi focus */
+    padding: 16px 50px; /* padding trên/dưới 16px, trái/phải 50px */
+    background: rgb(117, 117, 223); /* nền xanh */
+    color: #fff; /* màu chữ trắng */
+    font-size: 16px; /* kích thước chữ */
+    cursor: pointer; /* con trỏ chuột khi hover */
+    border-radius: 40px; /* bo tròn góc */
+}
+
+ul li {
+    list-style: none; /* bỏ dấu chấm đầu dòng */
+    font-size: 17px; /* kích thước chữ */
+    padding: 12px 8px 12px 50px; /* padding trên/dưới 12px, trái 50px, phải 8px */
+    user-select: none; /* không cho phép chọn văn bản */
+    cursor: pointer; /* con trỏ chuột khi hover */
+    position: relative; /* vị trí tương đối để sử dụng với ::before */
+}
+
+ul li::before {
+    content: ''; /* nội dung rỗng */
+    position: absolute; /* vị trí tuyệt đối */
+    height: 28px; /* chiều cao */
+    width: 28px; /* chiều rộng */
+    border-radius: 50%; /* bo tròn thành hình tròn */
+    background-image: url(unchecked.png); /* ảnh nền */
+    background-size: cover; /* kích thước ảnh phủ đầy */
+    background-position: center; /* căn giữa ảnh */
+    top: 12px; /* cách trên 12px */
+    left: 8px; /* cách trái 8px */
+}
+
+ul li.checked {
+    color: #555; /* màu chữ xám */
+    text-decoration: line-through; /* gạch ngang chữ */
+}
+
+ul li.checked::before {
+    background-image: url(checked.png); /* ảnh nền khi checked */
+}
+
+ul li span {
+    position: absolute; /* vị trí tuyệt đối */
+    right: 0; /* cách phải 0 */
+    top: 5px; /* cách trên 5px */
+    width: 40px; /* chiều rộng */
+    height: 40px;   /* chiều cao */
+    font-size: 22px; /* kích thước chữ */
+    color: #555;    /* màu chữ xám */
+    line-height: 40px; /* chiều cao dòng */
+    text-align: center; /* căn giữa chữ */
+    border-radius: 50%; /* bo tròn thành hình tròn */
+}
+
+ul li span:hover {
+    background: #edeef0; /* nền xám nhạt khi hover */
+}
